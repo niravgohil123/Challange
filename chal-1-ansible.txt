@@ -13,8 +13,8 @@
     count: 2
     vpc_subnet_id: default
     assign_public_ip: yes
-    aws_access_key: AKIAW4TXLBXDPPQEHBBJ
-    aws_secret_key: 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
+    aws_access_key: XXXX
+    aws_secret_key: XXXXX
   tasks:
     - name: Launch the new EC2 Instance
       ec2:
