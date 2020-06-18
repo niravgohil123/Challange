@@ -1,0 +1,62 @@
+Step1: Challenge #1
+
+A 3 tier environment is a common setup. Use a tool of your choosing/familiarity create these resources. Please remember we will not be judged on the outcome but more focusing on the approach, style and reproducibility
+
+Answer: I have created EC2 instance and then I logged in and done AWS Configure then installation of PIP, python, boto boto3,Python and Boto3.
+Then upgraded PIP version and finally install ansible.
+
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py
+pip install boto boto3
+sudo pip install ansible
+
+first upgraded PIP version to latest (Successfully installed pip-20.1.1)
+Successfully installed ansible-2.9.9
+Then I did configuration of ansible as below:
+
+echo "ansiblecontrol ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
+sudo mkdir /etc/ansible
+cd /etc/ansible
+
+Then I ran ansible play book command to run the yaml file(ansible.yaml is attached)
+
+This will create three instances and it will install apache and same way we can install docker, rabit mq on another instance as middleware and last one mysql as database tier.
+aws instance creation playbook
+
+Challenge #2
+
+Summary
+
+We need to write code that will query the meta data of an instance within aws and provide a json formatted output. The choice of language and implementation is up to you.
+Answer: We can login to instance and we can achive via multiple ways.
+
+
+A. download the Instance Metadata Query tool, which allows you to query the instance metadata using Instance Metadata Service Version 1 without having to enter the full URI or category names.
+
+B. You can use a tool such as cURL, as shown in the following example.You can use a tool such as cURL, as shown in the following example.
+
+[ec2-user ~]$ TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"` \
+&& curl -H "X-aws-ec2-metadata-token: $TOKEN" -v http://169.254.169.254/latest/meta-data/
+
+C: Run below command:
+
+aws ec2 describe-instances --instance-ids i-094948ed50ffcb10d --region us-east-2 >> metadata.json
+file metadata.json attached.
+
+Challenge #3
+
+We have a nested object, we would like a function that you pass in the object and a key and get back the value. How this is implemented is up to you.
+
+object = {“a”:{“b”:{“c”:”d”}}}
+
+key = a/b/c
+
+ 
+
+object = {“x”:{“y”:{“z”:”a”}}}
+
+key = x/y/z
+
+value = a
+
+Answer: see attached chal-3 file and you can run in https://codepen.io/

@@ -1,0 +1,72 @@
+{
+    "Reservations": [
+        {
+            "Instances": [
+                {
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "PublicDnsName": "",
+                    "StateReason": {
+                        "Message": "Client.UserInitiatedShutdown: User initiated shutdown",
+                        "Code": "Client.UserInitiatedShutdown"
+                    },
+                    "State": {
+                        "Code": 48,
+                        "Name": "terminated"
+                    },
+                    "EbsOptimized": false,
+                    "LaunchTime": "2020-06-17T09:31:55.000Z",
+                    "ProductCodes": [],
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 1
+                    },
+                    "StateTransitionReason": "User initiated (2020-06-17 10:07:31 GMT)",
+                    "InstanceId": "i-094948ed50ffcb10d",
+                    "EnaSupport": true,
+                    "ImageId": "ami-083ebc5a49573896a",
+                    "PrivateDnsName": "",
+                    "KeyName": "kube-master",
+                    "SecurityGroups": [],
+                    "ClientToken": "",
+                    "InstanceType": "t2.micro",
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "NetworkInterfaces": [],
+                    "Placement": {
+                        "Tenancy": "default",
+                        "GroupName": "",
+                        "AvailabilityZone": "us-east-2c"
+                    },
+                    "Hypervisor": "xen",
+                    "BlockDeviceMappings": [],
+                    "Architecture": "x86_64",
+                    "RootDeviceType": "ebs",
+                    "RootDeviceName": "/dev/xvda",
+                    "VirtualizationType": "hvm",
+                    "Tags": [
+                        {
+                            "Value": "KPMG",
+                            "Key": "Name"
+                        }
+                    ],
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "pending",
+                        "HttpEndpoint": "enabled",
+                        "HttpTokens": "optional",
+                        "HttpPutResponseHopLimit": 1
+                    },
+                    "AmiLaunchIndex": 0
+                }
+            ],
+            "ReservationId": "r-071c98e2d76902b98",
+            "Groups": [],
+            "OwnerId": "473770429894"
+        }
+    ]
+}

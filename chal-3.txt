@@ -1,0 +1,46 @@
+var obj = {"a":{"b":{"c":"d"}}}
+var obj1 = {"x":{"y":{"z":"a"}}}
+
+var key5 = 'x/y/z'
+
+// 4 test cases to test
+var key = 'a/b/c'  // valid - result: 'd'
+var key2 = 'a/b/b' // invalid - result : null
+var key3 = 'a/b'   // valid - result 'obj c'
+var key4 = 'a'     // valid - result obj 'b' as value - 1 level from root
+
+function ObjValByKey(Obj, key) {
+  let keyArray = key.split('/')
+  console.log("Keys Value", keyArray)
+  var output = ''
+  keyArray.map( (item, index) => console.log(item 
+                                            + ":" +index))
+  
+  keyArray.map((key, index) => {
+      if ( Obj.hasOwnProperty(key) ) {
+        Obj = Obj[key]  // prepare for next iteration
+        if(index == keyArray.length - 1) {
+          // end of the line 
+          output = Obj
+        }
+      } else { output = null }      
+  })
+  return output
+}
+
+
+
+output = ObjValByKey(obj, key)
+console.log("We got the following output [expect 'd']: ", output)
+
+output = ObjValByKey(obj1, key5)
+console.log("We got the following output [expect 'a']: ", output)
+
+output = ObjValByKey(obj, key2)
+console.log("We got the following output [expect 'null']: ", output)
+
+output = ObjValByKey(obj, key3)
+console.log("We got the following output [expect 'object c as value']: ", output)
+
+output = ObjValByKey(obj, key4)
+console.log("We got the following output [expect 'object b as value']: ", output)
