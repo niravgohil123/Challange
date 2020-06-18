@@ -7,7 +7,7 @@
   vars:
     instance_type: t2.micro
     security_group: default
-    image: ami-0dacb0c129b49f529
+    image: ami-XXXXX
     keypair: kube-master
     region: us-east-2
     count: 2
@@ -63,9 +63,3 @@
        name: apache2
        state: started
        enabled: yes
-
-=======================================
-
-  11  wget https://bootstrap.pypa.io/get-pip.py
-   12  sudo python3 get-pip.py
-pip install boto boto3
